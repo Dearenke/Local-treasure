@@ -1,13 +1,15 @@
 // 获取app.tools.request
 const { request } = getApp().tools;
+const regeneratorRuntime  = require('../../static/runtime.js');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    swiperImgs:[],// 轮播图
-    categories:[],// 分类信息
+    swiperImgs: [],// 轮播图
+    categories: [],// 分类信息
   },
 
   /**
@@ -15,16 +17,16 @@ Page({
    */
   onLoad: async function (options) {
     let { data } = await request({
-      url:'slides'
+      url: 'slides'
     });
     this.setData({
-      swiperImgs:data
+      swiperImgs: data
     });
     let res = await request({
-      url:'categories'
+      url: 'categories'
     });
     this.setData({
-      categories:res.data
+      categories: res.data
     });
 
 
@@ -34,48 +36,48 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-    
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-    
+
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    
+
   }
 })

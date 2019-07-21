@@ -59,13 +59,15 @@
 }
 
 .comments .item .name {
-  margin-top: 20rpx;
   font-size: 36rpx;
+  position: absolute;
+  left: 0;
+  top: 0;
 }
 
 .comments .item .date {
   align-self: flex-end;
-  margin: -40rpx 0 20rpx;
+  margin: 40rpx 0 20rpx;
   color: #567;
 }
 
@@ -82,8 +84,6 @@
   margin: 10rpx;
 }
 
-
-
 .star-box {
   position:absolute;
   top:0px;
@@ -97,7 +97,7 @@
   color: #e2e2e2;
 }
 .star-after {
- color:yellow; 
+ color:#fbd269; 
  position:absolute;
  left:0;
  top:0;

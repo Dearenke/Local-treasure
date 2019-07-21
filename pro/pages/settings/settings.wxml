@@ -7,9 +7,10 @@
       <image src="../../assets/imgs/location.png" class='img' style="width:40rpx;height:40rpx;"></image>
       <input type="text" placeholder='地址' disabled value="{{address}}" name="address"/>
     </view>
-    <picker range='{{categories}}' range-key='name' bindchange='saveType' name="shopType">
+    <!-- 选择店铺 -->
+    <picker range='{{categories}}' range-key='name' bindchange='saveType' >
       <view>
-        <text>店铺类型:{{shopType}}</text>
+        <text>店铺类型:{{categories[categoryId].name}}</text>
       </view>
     </picker>
 

@@ -22,6 +22,7 @@ Page({
     // 获取查询页面DOM的工具对象
      const query = wx.createSelectorQuery();
      // 定义选择器，并绑定DOM
+    console.log('query=====>',query)
       query.select('#bottom').boundingClientRect()
       query.exec(eles => {
         console.log(eles ); // 获取元素数据

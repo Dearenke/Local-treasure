@@ -1,5 +1,5 @@
 <swiper class="slides" indicator-color="#bcc0c9" indicator-active-color="#3a4861" indicator-dots>
-  <swiper-item wx:for="{{shop.images}}">
+  <swiper-item wx:for="{{shop.images}}" wx:key='{{index}}'>
     <image src="{{item}}"/>
   </swiper-item>
 </swiper>
@@ -16,18 +16,18 @@
   <text>描述:{{shop.introduction}}</text>
 </view>
 
-<view class="comments" wx:for="{{shop.comments}}">
+<view class="comments" wx:for="{{shop.comments}}" wx:key='{{index}}' wx:for-item='element'>
   <view class="item" >
-    <text class="name">{{item.name}}</text>
-    <text class="date">{{item.data}}</text>
+    <text class="name">{{element.name}}</text>
+    <text class="date">{{element.data}}</text>
     <view class='star-box'>
          <view >★★★★★</view> 
-         <view class="star-after" style="width:{{item.rating}}">★★★★★</view>
+         <view class="star-after" style="width:{{element.rating}}">★★★★★</view>
     </view>
   
-    <text class="content">{{item.content}}</text>
+    <text class="content">{{element.content}}</text>
     <view class="images" >
-      <image wx:for="{{item.images}}" src="{{tools(item)}}" bindtap='showPreview' data-url="{{tools(item)}}"/>
+      <image wx:for="{{element.images}}" src="{{tools(element)}}" bindtap='showPreview' data-url="{{tools(element)}}" wx:key='{{index}}' />
     </view>
   </view>
 </view>

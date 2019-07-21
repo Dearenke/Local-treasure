@@ -1,20 +1,35 @@
 {
-	"description": "项目配置文件。",
+	"description": "项目配置文件",
 	"packOptions": {
 		"ignore": []
 	},
 	"setting": {
 		"urlCheck": false,
-		"es6": false,
+		"es6": true,
 		"postcss": true,
 		"minified": true,
-		"newFeature": true
+		"newFeature": true,
+		"coverView": true,
+		"autoAudits": false,
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.2.2",
-	"appid": "wx93e2bafc07fd4fb1",
-	"projectname": "test123",
+	"libVersion": "2.7.3",
+	"appid": "wx241fd1b863601933",
+	"projectname": "%E9%A1%B9%E7%9B%AE%E4%B8%89",
+	"debugOptions": {
+		"hidedInDevtools": []
+	},
 	"isGameTourist": false,
+	"simulatorType": "wechat",
+	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -33,31 +48,77 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 0,
+			"current": 9,
 			"list": [
 				{
 					"id": 0,
-					"name": "list",
+					"name": "list1",
 					"pathName": "pages/list/list",
-					"query": "cid=9"
-				},
-				{
-					"id": 1,
-					"name": "list",
-					"pathName": "pages/list/list",
-					"query": "cid=9"
+					"query": "id=8",
+					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "detail",
+					"name": "pages/detail/detail",
 					"pathName": "pages/detail/detail",
-					"query": "shopid=1"
+					"query": "id=8",
+					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "add",
-					"pathName": "pages/settings/settings",
-					"query": ""
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "shops?id=14",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages",
+					"query": "shops?id=8",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/list",
+					"pathName": "pages/list/list",
+					"query": "id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/list",
+					"pathName": "pages/list/list",
+					"query": "id=2&shops?id=2",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/index/index",
+					"pathName": "pages/index/index",
+					"query": "shops?_start=0&_limit=6&categoryId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/list",
+					"pathName": "pages/list/list",
+					"query": "shops?_start=0&_limit=6&categoryId=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/list/list",
+					"pathName": "pages/list/list",
+					"query": "id=1",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/detail/detail",
+					"pathName": "pages/detail/detail",
+					"query": "id=1",
+					"scene": null
 				}
 			]
 		}

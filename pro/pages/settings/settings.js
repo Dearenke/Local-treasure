@@ -1,9 +1,12 @@
-
-const { request } = getApp().tools;
+const {
+  request
+} = getApp().tools;
 const baseObj = require('./baseObj.js')
-function initTime () {
+const regeneratorRuntime = require('../../static/runtime.js');
+
+function initTime() {
   let arr = [];
-  for(let i = 1; i < 25; i ++) {
+  for (let i = 1; i < 25; i++) {
     arr.push(i);
   }
   return arr;
@@ -14,21 +17,24 @@ Page({
    * 页面的初始数据
    */
   data: {
-    phone:'',
-    name:'',
+    phone: '',
+    name: '',
     // 地址
-    address:'', latitude:'', longitude:'', categoryId:''
+    address: '',
+    latitude: '',
+    longitude: '',
+    categoryId: ''
   },
   // phone,name
   valueHandler(e) {
     this.setData({
-      [e.target.dataset.type]:e.detail.value
+      [e.target.dataset.type]: e.detail.value
     });
   },
   // 选择位置
   chooseLocation() {
     wx.chooseLocation({
-      success:(res)=> {
+      success: (res) => {
         // address,latitude,longitude
         this.data.latitude = res.latitude;
         this.data.longitude = res.longitude;
@@ -52,7 +58,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: async function (options) {
+  onLoad: async function(options) {
     let res = await request({
       url: 'categories'
     });
@@ -64,8 +70,10 @@ Page({
   // 保存店铺类型
   saveType(e) {
     // detail.value索引
+    console.log('picker发送选择改变，携带值为', e.detail.value)
     this.setData({
-      categoryId: this.data.categories[e.detail.value].id
+      // categoryId: this.data.categories[e.detail.value].id
+      categoryId: e.detail.value
     })
 
   },
@@ -77,62 +85,76 @@ Page({
   },
   async addShop(e) {
 
-    let { address,categoryId,latitude,longitude,name,phone} = this.data;
-       let { data } = await request({
-      url:'shops',
-      data:{
-        address, categoryId, latitude, longitude, name, phone
+    let {
+      address,
+      categoryId,
+      latitude,
+      longitude,
+      name,
+      phone
+    } = this.data;
+    let {
+      data
+    } = await request({
+      url: 'shops',
+      data: {
+        address,
+        categoryId,
+        latitude,
+        longitude,
+        name,
+        phone
       },
-      method:'post'
+      method: 'post'
     });
     console.log(data);
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-    
+  onReady: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    
+  onShow: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
-    
+  onHide: function() {
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
-    
+  onUnload: function() {
+
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
-    
+  onPullDownRefresh: function() {
+
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
-    
+  onReachBottom: function() {
+
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
-    
+  onShareAppMessage: function() {
+
   }
 })

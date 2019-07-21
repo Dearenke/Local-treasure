@@ -20,32 +20,48 @@ const formatNumber = n => {
 
 
 // 封装一个Promise请求的函数
-const q = (options)=> {
- let baseURL = 'http://127.0.0.1:3000/';
- return new Promise((resolve,reject)=>{
-   // 处理请求方式
-  if(!options.method) options.method = 'get';
+const ask = (options) => {
+  let baseURL = 'http://127.0.0.1:3000/';
+  return new Promise((resolve, reject) => {
+    // 处理请求方式     
+    if (!options.method) options.method = 'get';
     // 加工对象，以options为基准，合并我们添加的属性
-   Object.assign(options, {
-     url: baseURL + options.url,
-     success: resolve,
-     fail: reject,
-     complete: wx.hideLoading
-   });
+    Object.assign(options, {
+      url: baseURL + options.url,
+      success: resolve,
+      fail: reject,
+      complete: wx.hideLoading
+    });
 
-   wx.showLoading({
-     title: '玩命儿加载中...',
-   });
-   // let that = this; ES6箭头函数，不用如此麻烦，箭头函数向上绑定上级function的this
-   // 发起请求
-   wx.request(options);
- });
+    wx.showLoading({
+      title: '玩命儿加载中...',
+    });
+    // let that = this; ES6箭头函数，不用如此麻烦，箭头函数向上绑定上级function的this
+    // 发起请求
+    wx.request(options);
+  });
 }
 
-
+// let qq = (options) =>{
+//   let baseURL = 'http://127.0.0.1:3000/'
+//   return new Promise((resolve,reject) =>{
+//     if (!options.method) options.method = 'get'
+//     Object.assign(options,{
+//       url:baseURL+options.url,
+//       method:options.method,
+//       success:resolve,
+//       fail:reject,
+//       complete:wx.hideLoading
+//     })
+//     wx.showLoading({
+//       title: '..........',
+//     })
+//     wx.request(options)
+//   })
+// }
 
 
 module.exports = {
   formatTime: formatTime,
-  request:q
+  request: ask
 }
