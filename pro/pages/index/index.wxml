@@ -5,6 +5,7 @@
           </swiper-item>
   </swiper>
 
+
   <view class='grids'>
        <navigator class='item messagesArr' wx:for="{{categories}}" wx:key="{{item.id}}" url="{{'/pages/list/list?id='+item.id}}">
          <image src="{{item.icon}}"></image>
