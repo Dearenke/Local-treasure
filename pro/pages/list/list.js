@@ -14,6 +14,8 @@ Page({
           shopList: data
         })
       }
+
+      
     })
   },
   async showListByScroe() {

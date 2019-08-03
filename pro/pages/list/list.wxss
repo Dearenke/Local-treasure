@@ -8,6 +8,8 @@
   border-bottom: 1rpx solid #eee;
 }
 
+
+
 .cells .item image {
   width: 160rpx;
   height: 160rpx;
