@@ -24,7 +24,6 @@
                     <view data-text="{{item}}">{{item}}</view>
                 </view>
             </view>
-
         </view>
     </view>
 </view>
