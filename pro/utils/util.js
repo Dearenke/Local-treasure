@@ -19,6 +19,8 @@ const formatNumber = n => {
 
 
 
+
+
 // 封装一个Promise请求的函数
 const ask = (options) => {
   let baseURL = 'http://127.0.0.1:3000/';
