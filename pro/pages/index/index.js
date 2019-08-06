@@ -2,6 +2,8 @@
 const { request } = getApp().tools;
 const regeneratorRuntime  = require('../../static/runtime.js');
 
+
+
 Page({
 
   /**
