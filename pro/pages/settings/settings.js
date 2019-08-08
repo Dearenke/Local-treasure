@@ -11,6 +11,7 @@ function initTime() {
   }
   return arr;
 }
+
 Page({
 
   /**
