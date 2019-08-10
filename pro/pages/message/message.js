@@ -39,6 +39,8 @@ Page({
    */
   onShow: function () {
   
+
+  
   },
 
   /**
